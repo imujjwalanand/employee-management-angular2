@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "deploy": "ng build -sm -ec -bh /repo name/ & ngh --silent=false",
+    "deploy": "ng build -sm -ec -bh /repo name/ ",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
