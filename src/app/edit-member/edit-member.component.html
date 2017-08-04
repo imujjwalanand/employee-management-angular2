@@ -1,0 +1,51 @@
+<p>
+  {{list}}
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <!-- <ul>
+      <li *ngFor="let key of keys">{{ key }}</li>
+    </ul> -->
+    <table style="width:100%" class="pure-table">
+  <tr>
+    <th>Employee ID</th>
+    <th>Employee Name</th> 
+    <th>Employee Email</th>
+  </tr>
+    <tr *ngFor="let key of keys; let i = index">  
+    <!-- <tr *ngFor="let key of keys ; let name of names ; let email of emails"> -->
+    <td>{{key}}</td>
+    <td>{{names[i]}}</td>
+    <td>{{emails[i]}}</td>
+  </tr>
+  
+</table>
+<br>
+<br>
+<br>
+<br>
+
+
+  <div>
+    <label>Enter the ID: </label>
+    <input type="text" #id>
+    <button class = "pure-button" (click)="getDetails(id.value)">Get Employee!</button>
+  </div>
+
+  <div *ngIf="this.setNewDetails === true;">
+    <p style="text-align:justify, center">
+  <label>ID : </label>  {{keyList[(id.value)-1]}} <br>
+  <label>Name : </label><input [(ngModel)] = "names[(id.value-1)]" type="string" placeholder="{{names[(id.value-1)]}}" #name><br>
+  <label>Email-ID : </label><input [(ngModel)] = "emails[(id.value-1)]" type="string" placeholder="{{emails[(id.value-1)]}}" #email><br>
+  
+  <div>  
+    <button class = "pure-button" (click)="submitNewDetails(id.value, name.value, email.value)">Submit!</button>
+    <button class = "pure-button" (click)="goBack()">Back</button>
+  </div>
+      
+
+  </div>
+  
+

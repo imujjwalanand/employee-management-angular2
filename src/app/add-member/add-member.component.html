@@ -1,0 +1,11 @@
+<p style="text-align:justify, center">
+  <label class="pure-label">ID : </label><input type="string" class="pure-input-rounded" placeholder="Enter the ID" #id><br>
+  <label>Name : </label><input type="string" class="pure-input-rounded" placeholder="Enter the name" #name><br>
+  <label>Email-ID : </label><input type="string" class="pure-input-rounded" placeholder="Enter the email-id" #email><br>
+  <!-- <p>{{email.value}} -->
+  <a routerLink="/editMember" routerLink="active">
+    <button class = "pure-button" (click)="submitDetails(id.value, name.value, email.value)">
+      Submit!</button>
+  </a>
+  <router-outlet></router-outlet>
+</p>
